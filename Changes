@@ -1,4 +1,7 @@
 Revision history for Log-Log4perl-Appender-TAP
 
+0.02      2013-09-05 07:27:23 -0400
+  - support perl 5.8 (possibly even 5.6)
+
 0.01      2013-07-05 17:05:01 America/New_York
   - initial version

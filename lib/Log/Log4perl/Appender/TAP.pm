@@ -2,12 +2,11 @@ package Log::Log4perl::Appender::TAP;
 
 use strict;
 use warnings;
-use v5.10;
 use Test::Builder::Module;
 our @ISA = qw( Log::Log4perl::Appender );
 
 # ABSTRACT: Append to TAP output
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 
 
 sub new
@@ -17,7 +16,7 @@ sub new
   my %args = @_;
   bless {
     builder => Test::Builder::Module->builder,
-    method  => $args{method} // 'note',
+    method  => $args{method} || 'note',
   }, $class;
 }
 
@@ -44,11 +43,12 @@ Log::Log4perl::Appender::TAP - Append to TAP output
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
  use Test::More tests => 1;
+ use Log::Log4perl;
  
  LOG::Log4perl::init(\<<CONF);
  log4perl.rootLogger=ERROR, TAP
